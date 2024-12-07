@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="author" content="Graniel Bellfield">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="keywords" content="Graniel Bellfield's  Portfolio">
+  <meta name="description" content="Portfolio of Graniel Bellfield">
+  <meta name="author" content="Graniel Bellfield">
+
+
+  <meta property="og:site_name"content="Portfolio of Graniel Bellfield">
+  <meta property="og:title" content="Portfolio of Graniel Bellfield">
+  <meta property="og:type" content="website"/>
+  <meta property="og:description" content="Portfolio of Graniel Bellfield">
+  <title>Graniel Bellfield - Web Developer</title>
+<!-- Theme CSS -->
+  <link href="style.css" rel="stylesheet">
+  <link href="template.css" rel="stylesheet">
+  <link href="bootstrap.min.css" rel="stylesheet">
+
+<!-- Tailwind CSS -->
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link
+  href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap"
+  rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+ 
+
+  <style>
+    :root {
+      --primary-black: #111111;
+      --primary-white: #ffffff;
+      --light-gray: #f5f5f5;
+      --text-gray: #666666;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif; 
+      /* // Switching to Inter for modern look */
+      color: var(--primary-black);
+      line-height: 1.6;
+    }
+
+    .main-header {
+      background: rgba(255, 255, 255, 0.9);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    }
+
+    .hero-section {
+      min-height: 100vh;
+   
+      display: flex;
+      align-items: center;
+    }
+
+    .section-spacing {
+      padding: 120px 0;
+    }
+
+    .gradient-text {
+      background: linear-gradient(to right, var(--primary-black), #333);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    /* // Modern card styling */
+    .reference-card {
+      background: var(--primary-white);
+      border: 1px solid rgba(0, 0, 0, 0.1);
+      border-radius: 16px;
+      transition: all 0.3s ease;
+    }
+
+    .reference-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    }
+    .reference-card-2 {
+      background: #f9fafb;
+      border: 1px solid rgba(0, 0, 0, 0.1);
+      border-radius: 16px;
+      transition: all 0.3s ease;
+    }
+
+    .reference-card-2:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    /* // Skills section update */
+    .skill-tag {
+      background: var(--light-gray);
+      padding: 0.75rem 1.5rem;
+      border-radius: 100px;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      width: 100%;
+      margin: 0 auto;
+    }
+
+    .skill-tag:hover {
+      background: var(--primary-white);
+      color: var(--primary-black);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      transform: translateY(-2px);
+    }
+ 
+    .notification-bar {
+        display: none; /* Initially hidden */
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background-color: #000000; /* Blue background */
+        color: white;
+        box-shadow: 0px -4px 6px rgba(0, 0, 0, 0.1);
+        padding: 10px 16px;
+        z-index: 1000;
+        transform: translateY(100%); /* Start off-screen */
+        transition: transform 0.5s ease-in-out; /* Smooth slide animation */
+    
+        
+    }
+
+    .top-noti {
+      width:60%
+    }
+
+    .notification-bar.visible {
+        display: block;
+        transform: translateY(0); /* Slide into view */
+    }
+
+    .notification-container {
+        max-width: 1200px;
+        margin: 10px auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+  
+    }
+
+    .notification-text {
+        font-size: 20px;
+         
+        color: #ffffff;
+  
+    }
+
+    .cta-button {
+        background-color: white;
+        color: #000000; /* Blue text */
+        padding: 10px 24px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+        font-size: 20px;
+        font-weight: bold;
+        margin: 0 10px;
+    }
+ 
+
+    @media (max-width:600px) {
+      .cta-button {
+        background-color: white;
+        color: #000000; /* Blue text */
+        padding: 10px 24px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+        font-size: 20px;
+        font-weight: bold;
+        margin: 0 10px;
+    }
+
+    .notification-text {
+        font-size: 20px;
+         
+        color: #ffffff;
+  
+    }
+
+    .flex-noti {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+    }
+
+    .top-noti {
+      width:90%
+    }
+
+    .about-me-img, .profile-pic-img {
+      width: 100%;
+    }
+
+  
+    }
+
+ 
+
+    div.intro-heading p,
+div a.view-my {
+  text-align: left;
+
+}
+
+@media (max-width: 1023px) {
+
+
+
+  .intro-heading p,
+  div,
+  a {
+    text-align: center;
+    margin: 0 auto;
+  }
+
+  .intro-heading {
+    padding: 0 4%;
+  }
+
+
+  div.about-intro,
+  div.text p {
+    text-align: left;
+  }
+
+  div.about-intro {
+    padding: 0px;
+  }
+
+  .new-padd-px-0 {
+    padding: 0 4% !important;
+  }
+
+
+
+  .mobile-max-width-testimonial {
+    display: none !important;
+  
+  
+  }
+
+  .desktop-max-width-testimonial {
+display: block !important;
+width: 70%;
+margin: 0 auto;
+  }
+
+
+
+}
+ 
+  #expertise li {
+    color: #000000 !important;
+  }
+
+
+  div.card {
+    border: none !important;
+  }
+
+
+
+ 
+/* Ensure proper spacing */
+#experience .relative {
+  padding-top: 1.5rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  #experience .container {
+    max-width: 100%;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  .skill-tag  {
+    width: 90%;
+  }
+}
+</style>
+
+</head>
+
+<body>
+ 
+
+
+  <!-- Header -->
+  <header class="main-header">
+    <nav class="navbar navbar-expand-md one-page-nav">
+      <div class="container">
+        <!-- Mobile Toggle -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-collapse-toggle"
+          aria-controls="navbar-collapse-toggle" aria-expanded="false" aria-label="Toggle navigation">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <!-- Top Menu -->
+        <div class="collapse navbar-collapse justify-content-end" id="navbar-collapse-toggle">
+          <ul class="navbar-nav mx-auto">
+            <li class="nav-item nav-link-scroll">
+              <a class="nav-link nav-link-scroll" data-scroll-nav="0" href="#home">
+                <span class="text-xl ">Home</span>
+              </a>
+            </li>
+            
+                        <li class="nav-item">
+              <a class="nav-link nav-link-scroll" data-scroll-nav="1" href="#skills"><span class="text-xl">Skills</span></a>
+            </li>
+                  
+
+       
+
+
+                        <li class="nav-item">
+              <a class="nav-link nav-link-scroll" data-scroll-nav="3" href="#about"><span class="text-xl">About Me</span></a>
+            </li>
+                        
+
+                        <li class="nav-item">
+              <a class="nav-link nav-link-scroll" data-scroll-nav="5" href="#references"><span class="text-xl">References</span></a>
+            </li>
+            
+                        
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Main -->
+  <main class="wrapper">
+    <!-- Home Section -->
+    <section id="home" class="hero-section bg-gray-50 ">
+      <div class="container max-w-6xl mx-auto px-6 pt-32 sm:pt-40 md:pt-40 lg:pt-32 xl:pt-32 2xl:pt-32">
+       <div class="py-0">
+       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div class="space-y-6">
+                      
+            <h1 class="font-bold  
+                2xl:text-8xl 
+                xl:text-8xl 
+                lg:text-7xl 
+                md:text-6xl 
+                sm:text-6xl 
+                text-5xl
+              
+                relative z-10 float">
+                Graniel <br>Bellfield
+            </h1>
+
+            <p class="text-3xl md:text-3xl lg:text-4xl xl:text-4xl 2xl:text-4xl text-gray-600">Web Developer</p>
+            <p class="text-xl text-gray-600 max-w-xl  intro-heading">
+              teasting
+            </p>
+            <a href="#about" data-scroll-nav="1" class="inline-block px-6 py-2 bg-black text-white rounded-full hover:bg-gray-800 transition-colors text-md nav-link-scroll" style="text-decoration: none;">
+              Learn More
+            </a>
+          </div>
+          <div class="relative max-w-lg mx-auto">
+            <div class="absolute inset-0 bg-gradient-to-tr from-gray-100 to-gray-300 rounded-3xl transform rotate-0"></div>
+            <img 
+  src="./daniel-img.avif" 
+  alt="Graniel" 
+  class="relative rounded-3xl shadow-xl"
+/>
+
+          </div>
+        </div>
+       </div>
+      </div>
+    </section>
+
+    
+    
+
+          <!-- Skills Section -->
+                <section id="skills" class="section-spacing bg-white">
+          <div class="container max-w-6xl mx-auto px-6">
+            <h2 class="text-4xl md:text-5xl font-bold mb-16 text-center">Skills</h2>
+            <div class="grid grid-cols-1 lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1  gap-4 skill-tag-container">
+                              <div class="skill-tag text-center">skill1</div>
+                              <div class="skill-tag text-center">skill 2</div>
+                              <div class="skill-tag text-center">skill 3</div>
+                              <div class="skill-tag text-center">skill 4</div>
+                          </div>
+          </div>
+        </section>
+        
+
+  
+<!-- About Section -->
+<section id="about" class="section-spacing bg-white">
+  <div class="container max-w-6xl mx-auto px-6">
+          <!-- Two-column layout with image -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <div class="order-2 lg:order-1 ">
+        <img  
+  src="./daniel_ojai.avif" 
+  alt="Graniel"
+  class="rounded-3xl shadow-xl max-w-lg mx-auto about-me-img"
+/>
+        </div>
+        <div class="order-1 lg:order-2 space-y-6">
+          <h2 class="text-4xl md:text-5xl font-bold">About Me</h2>
+          <p class="text-2xl text-gray-600">
+            Hi, I'm Graniel. A Web Developer based in Los Angeles, California.
+          </p>
+          <div class="text-gray-600 space-y-4 text-lg">
+            testing about me
+          </div>
+                      <div>
+            <a href="./Resume-Daniel-Bellfield-2022.pdf" 
+   target="_blank" 
+   class="inline-block px-6 py-2 bg-black text-white rounded-full hover:bg-gray-800 transition-colors text-md" 
+   style="text-decoration: none;">
+   Download Resume
+</a>
+
+
+            </div>
+                                <div class="mt-6">
+              <a href="mailto:dnlbellfield@gmail.com" 
+                 class="inline-block px-6 py-2 bg-black text-white rounded-full hover:bg-gray-800 transition-colors text-md" 
+                 style="text-decoration: none;">
+                 Contact Me
+              </a>
+            </div>
+                  </div>
+      </div>
+      </div>
+</section>
+<!-- End About Section -->
+
+
+            <!-- Work Experience Section -->
+            
+
+
+
+      <!-- stories Section (References) -->
+                    <section id="references" class="section-spacing bg-gray-50">
+            <div class="container max-w-6xl mx-auto px-6">
+              <h2 class="text-4xl md:text-5xl font-bold mb-16 text-center">References</h2>
+              <div class="space-y-8">
+                                  <div class="reference-card max-w-3xl mx-auto">
+                    <div class="p-8">
+                      <p class="text-lg mb-6 text-gray-600 italic">
+                        "User-Friendly: Prevents data loss due to accidental refresh or browser closure.
+Minimal Overhead: Requires no backend changes, as all data is stored locally.
+Real-Time Updates: Automatically saves data as the user types."
+                      </p>
+                      <h4 class="text-lg font-semibold text-black">John Doe, Senior Developer at Tech Solutions</h4>
+                    </div>
+                  </div>
+                
+                
+                              </div>
+            </div>
+          </section>
+          
+
+
+                  <!-- projects  -->
+                  
+
+
+ 
+
+ 
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer py-4 bg-gray-50">
+    <div class="container text-center">
+      <p>&copy; 2024 Graniel Bellfield</p>
+    </div>
+  </footer>
+
+  <a href="#home" id="back_to_top" class="back-to-top nav-link-scroll" data-scroll-nav="0">
+  <img src="http://portfolio-up.test/build/assets/arrow-img.svg" alt="Arrow Up Icon">
+
+
+  </a>
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="custom.js"></script>
+  <script src="jquery.appear.js"></script>
+  <script src="bootstrap.min.js"></script>
+  <script src="scrollIt.min.js"></script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const navLinks = document.querySelectorAll(".nav-link-scroll");
+
+      navLinks.forEach(function (link) {
+        link.addEventListener("click", function (event) {
+          event.preventDefault();
+          const targetId = link.getAttribute("href");
+
+          // Ensure the target element exists before attempting to scroll
+          const targetElement = document.querySelector(targetId);
+          if (targetElement) {
+            targetElement.scrollIntoView({ behavior: "smooth" });
+          } else {
+            console.warn(`Element with ID ${targetId} not found`);
+          }
+        });
+      });
+    });
+
+       
+
+
+  </script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+  const header = document.querySelector('.main-header');
+
+  window.addEventListener("scroll", function () {
+    if (window.scrollY >= 100) {
+      document.body.classList.add("fixed-header");
+    } else {
+      document.body.classList.remove("fixed-header");
+    }
+  });
+
+  // Trigger on page load if already scrolled
+  if (window.scrollY >= 100) {
+    document.body.classList.add("fixed-header");
+  }
+});
+
+</script>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const notificationBar = document.getElementById('notification-bar');
+    const publishButton = document.getElementById('publish-button');
+
+    if (notificationBar) {
+        // Show the notification bar after a short delay
+        setTimeout(() => {
+            
+            notificationBar.classList.add('visible');
+        }, 1000);
+    }
+ 
+});
+</script>
+
+<script>
+  $(document).ready(function() {
+    function adjustNavLinkSize() {
+      // Count the number of <li> elements in the navbar
+      var navItemCount = $('.navbar-nav .nav-item').length;
+
+      // If the count is not greater than 4, do nothing
+      if (navItemCount <= 4) {
+        return; // Exit the function early
+      }
+
+      // Change the class to text-lg if there are more than 4 links
+      $('.navbar-nav .nav-item span').removeClass('text-xl').addClass('text-md');
+
+      // Check window size
+      if ($(window).width() > 1100) {
+        // Change back to text-xl if window size is greater than 1100px
+        $('.navbar-nav .nav-item span').removeClass('text-md').addClass('text-xl');
+      }
+    }
+
+    // Initial adjustment on page load
+    adjustNavLinkSize();
+
+    // Adjust on window resize
+    $(window).resize(function() {
+      adjustNavLinkSize();
+    });
+  });
+</script>
+
+
+
+
+
+</body>
+
+</html>
